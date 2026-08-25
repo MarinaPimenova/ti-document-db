@@ -7,7 +7,7 @@ set -ex
 ##echo "contextEnv: ${contextEnv}"
 ##DB_ADDRESS=jdbc:postgresql://localhost:5433/document_db
 # url=jdbc:postgresql://host.docker.internal:5433/document_db
-DB_ADDRESS=
+DB_ADDRESS=<see service name in docker-compose.yml>
 DB_PASSWORD=postgres
 DB_username=postgres
 
