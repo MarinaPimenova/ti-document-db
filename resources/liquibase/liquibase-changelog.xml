@@ -18,4 +18,14 @@
         <sqlFile path="sql/_003_create_document_vector_table.sql" relativeToChangelogFile="true"
                  encoding="utf8" splitStatements="false"/>
     </changeSet>
+
+    <changeSet id="4" author="pm">
+        <sqlFile path="sql/_004_create_question_document_table.sql" relativeToChangelogFile="true"
+                 encoding="utf8" splitStatements="false"/>
+    </changeSet>
+
+    <changeSet id="5" author="pm">
+        <sqlFile path="sql/_005_create_question_section_table.sql" relativeToChangelogFile="true"
+                 encoding="utf8" splitStatements="false"/>
+    </changeSet>
 </databaseChangeLog>
