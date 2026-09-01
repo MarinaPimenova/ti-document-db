@@ -1,0 +1,31 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="1" author="pm">
+        <sqlFile path="sql/_001_create_schema.sql"
+                 relativeToChangelogFile="true" splitStatements="false"/>
+    </changeSet>
+
+    <changeSet id="2" author="pm">
+        <sqlFile path="sql/_002_create_extension.sql" relativeToChangelogFile="true"
+                 encoding="utf8" splitStatements="false"/>
+    </changeSet>
+
+    <changeSet id="3" author="pm">
+        <sqlFile path="sql/_003_create_document_vector_table.sql" relativeToChangelogFile="true"
+                 encoding="utf8" splitStatements="false"/>
+    </changeSet>
+
+    <changeSet id="4" author="pm">
+        <sqlFile path="sql/_004_create_question_document_table.sql" relativeToChangelogFile="true"
+                 encoding="utf8" splitStatements="false"/>
+    </changeSet>
+
+    <changeSet id="5" author="pm">
+        <sqlFile path="sql/_005_create_question_section_table.sql" relativeToChangelogFile="true"
+                 encoding="utf8" splitStatements="false"/>
+    </changeSet>
+</databaseChangeLog>

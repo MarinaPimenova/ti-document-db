@@ -1,7 +1,7 @@
 services:
-  pgvector-postgres:
+  ti-document-db:
     image: ankane/pgvector
-    container_name: ti-pgvector-postgres
+    container_name: ti-document-db
     environment:
       POSTGRES_DB: ${DOCUMENT_DB_NAME:-document_db}
       POSTGRES_USER: ${DOCUMENT_USER:-postgres}
@@ -9,13 +9,13 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - pgvector-data:/var/lib/postgresql/data
-      - ./pgvector-scripts:/docker-entrypoint-initdb.d
+      - document-db-data:/var/lib/postgresql/data
+      - ./document-init-scripts:/docker-entrypoint-initdb.d
     networks:
       - knowledge-network
 
 volumes:
-  pgvector-data:
+  document-db-data:
 
 networks:
   knowledge-network:

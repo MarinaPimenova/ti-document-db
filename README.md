@@ -34,27 +34,22 @@ The database follows the following principles:
 - Immutable migration scripts
 - Database-first schema management
 
-
 ```mermaid
 erDiagram
 
 ```
 
-
 # Database Migration Strategy
 
-Liquibase changelog is divided into three areas.
+Liquibase changelog contains all scripts.
 
 ## Schema
 
 Contains database structure:
 
 - Schema creation
+- Extensions
 - Tables
-- Constraints
-- Foreign keys
-- Indexes
-
 
 Executed in all environments.
 
