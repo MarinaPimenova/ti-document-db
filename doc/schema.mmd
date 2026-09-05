@@ -1,0 +1,35 @@
+erDiagram
+    question_generation_document ||--o{ question_generation_section : "has"
+    question_generation_document ||--o{ vector_store : "referenced by (document_id, logical)"
+    question_generation_section ||--o{ vector_store : "referenced by (section_id, logical)"
+
+    question_generation_document {
+        bigint id PK
+        varchar_500 filename
+        varchar_10 file_extension
+        bigint file_size
+        varchar_30 status
+        timestamptz created_at
+        timestamptz updated_at
+    }
+
+    question_generation_section {
+        bigint id PK
+        bigint document_id FK
+        integer section_number
+        varchar_1000 title
+        text content
+        integer start_page_number
+        integer end_page_number
+        integer token_count
+        timestamptz created_at
+    }
+
+    vector_store {
+        uuid id PK
+        text content
+        jsonb metadata
+        vector_1024 embedding
+        bigint document_id "generated from metadata->>'document_id'"
+        bigint section_id "generated from metadata->>'section_id'"
+    }
