@@ -4,7 +4,7 @@ set -ex
 
 DB_ADDRESS=<see service name in docker-compose.yml>
 DB_PASSWORD=postgres
-DB_username=postgres
+DB_USERNAME=postgres
 
 export PGPASSWORD="${DB_PASSWORD}"
 # psql -h ${DB_ADDRESS} -U ${DB_username} -d document_db -tc "CREATE SCHEMA IF NOT EXISTS document AUTHORIZATION document_user;"
